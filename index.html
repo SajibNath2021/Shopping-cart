@@ -64,7 +64,7 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$1,278</h5>
+                        <h5 >$<span id="subTotal">1278</span></h5>
                         <h5>$0</h5>
                         <h5>$1,278</h5>
                      </div>
@@ -88,10 +88,20 @@
          // price add
          const iphonePrice = document.getElementById("IphonePrice").innerText;
          const priceNumber = parseFloat(iphonePrice);
-         const totalPrice =  priceNumber * 2;
+         const totalPrice =  priceNumber + 1219;
          document.getElementById("IphonePrice").innerText = totalPrice;    
-
+       
+       
+         // subtotal
+         const subTotal = document.getElementById("subTotal").innerText;
+         const subTotalNumber = parseFloat(subTotal);
+         const totalSub =  59 + totalPrice ;
+         document.getElementById("subTotal").innerText = totalSub;
       })
+     
+     
+     
+     
       // iphone minus
       const removeiphoneBtn = document.getElementById("removeiphone");
       removeiphoneBtn.addEventListener("click",function(){
@@ -104,7 +114,7 @@
          //price minus
          const iphonePrice = document.getElementById("IphonePrice").innerText;
          const priceNumber = parseFloat(iphonePrice);
-         const totalPrice =  priceNumber / 2;
+         const totalPrice =  priceNumber - 1219;
          document.getElementById("IphonePrice").innerText = totalPrice;
          }
          
