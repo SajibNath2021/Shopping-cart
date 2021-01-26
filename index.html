@@ -96,14 +96,18 @@
       const removeiphoneBtn = document.getElementById("removeiphone");
       removeiphoneBtn.addEventListener("click",function(){
          const phoneQuantity = document.getElementById("iphoneQ").value;
-         const phoneQNumber = parseFloat(phoneQuantity);
-         var totalQuantity = phoneQNumber - 1;
-         document.getElementById("iphoneQ").value = totalQuantity;
+         if(phoneQuantity > 1){
+             const phoneQNumber = parseFloat(phoneQuantity);
+             var totalQuantity = phoneQNumber - 1;
+              document.getElementById("iphoneQ").value = totalQuantity;
+
          //price minus
          const iphonePrice = document.getElementById("IphonePrice").innerText;
          const priceNumber = parseFloat(iphonePrice);
          const totalPrice =  priceNumber / 2;
          document.getElementById("IphonePrice").innerText = totalPrice;
+         }
+         
       })
    </script>
 </body>
