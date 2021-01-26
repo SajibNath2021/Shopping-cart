@@ -25,11 +25,11 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <button id="removeiphone" class="btn btn-default"><i class="fas fa-minus"></i></button>
                            <input id="iphoneQ" type="text" class="form-control text-center" value="1">
                            <button id="addiphone" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$1219</h5>
+                        <h5>$ <span id="IphonePrice">1219</span> </h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -78,13 +78,32 @@
       </div>
    </section>
    <script>
+      // iphone plus
       const addiphoneBtn = document.getElementById("addiphone");
       addiphoneBtn.addEventListener("click", function(){
          const phoneQuantity = document.getElementById("iphoneQ").value;
          const phoneQNumber = parseFloat(phoneQuantity);
          var totalQuantity = phoneQNumber + 1;
-         document.getElementById("iphoneQ").value = totalQuantity;       
+         document.getElementById("iphoneQ").value = totalQuantity; 
+         // price add
+         const iphonePrice = document.getElementById("IphonePrice").innerText;
+         const priceNumber = parseFloat(iphonePrice);
+         const totalPrice =  priceNumber * 2;
+         document.getElementById("IphonePrice").innerText = totalPrice;    
 
+      })
+      // iphone minus
+      const removeiphoneBtn = document.getElementById("removeiphone");
+      removeiphoneBtn.addEventListener("click",function(){
+         const phoneQuantity = document.getElementById("iphoneQ").value;
+         const phoneQNumber = parseFloat(phoneQuantity);
+         var totalQuantity = phoneQNumber - 1;
+         document.getElementById("iphoneQ").value = totalQuantity;
+         //price minus
+         const iphonePrice = document.getElementById("IphonePrice").innerText;
+         const priceNumber = parseFloat(iphonePrice);
+         const totalPrice =  priceNumber / 2;
+         document.getElementById("IphonePrice").innerText = totalPrice;
       })
    </script>
 </body>
