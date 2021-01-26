@@ -87,20 +87,15 @@
          document.getElementById("iphoneQ").value = totalQuantity; 
          // price add
          const iphonePrice = document.getElementById("IphonePrice").innerText;
-         const priceNumber = parseFloat(iphonePrice);
-         const totalPrice =  priceNumber + 1219;
-         document.getElementById("IphonePrice").innerText = totalPrice;    
+         priceAddRemove("IphonePrice", 1219 );
+            
        
        
          // subtotal
-         const subTotal = document.getElementById("subTotal").innerText;
-         const subTotalNumber = parseFloat(subTotal);
-         const totalSub =  59 + totalPrice ;
-         document.getElementById("subTotal").innerText = totalSub;
+         // const subTotal = document.getElementById("subTotal").innerText;
+         // const totalSub =  59 + totalPrice ;
+         // document.getElementById("subTotal").innerText = totalSub;
       })
-     
-     
-     
      
       // iphone minus
       const removeiphoneBtn = document.getElementById("removeiphone");
@@ -112,13 +107,20 @@
               document.getElementById("iphoneQ").value = totalQuantity;
 
          //price minus
-         const iphonePrice = document.getElementById("IphonePrice").innerText;
-         const priceNumber = parseFloat(iphonePrice);
-         const totalPrice =  priceNumber - 1219;
-         document.getElementById("IphonePrice").innerText = totalPrice;
-         }
+          const iphonePrice = document.getElementById("IphonePrice").innerText;
+          priceAddRemove("IphonePrice", -1219 )
          
+          }
+
       })
+
+      // price plus minus function
+      function priceAddRemove(id, priceNumber1 ){
+         const iphonePrice = document.getElementById(id).innerText;
+         const priceNumber = parseFloat(iphonePrice);
+         const totalPrice =  priceNumber + priceNumber1;
+         document.getElementById(id).innerText = totalPrice;
+      }
    </script>
 </body>
 
