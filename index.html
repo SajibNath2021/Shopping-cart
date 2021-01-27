@@ -43,12 +43,12 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="removeCase" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="caseQ" type="text" class="form-control text-center" value="1">
+                           <button id="addCase" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$59</h5>
+                        <h5>$ <span id="CasePrice">59</span> </h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -115,12 +115,93 @@
       })
 
       // price plus minus function
-      function priceAddRemove(id, priceNumber1 ){
+      function priceAddRemove(id, DFIphonePrice ){
          const iphonePrice = document.getElementById(id).innerText;
          const priceNumber = parseFloat(iphonePrice);
-         const totalPrice =  priceNumber + priceNumber1;
+         const totalPrice =  priceNumber + DFIphonePrice ;
          document.getElementById(id).innerText = totalPrice;
       }
+
+      // end of iphone bar 
+      // start Case bar 
+     
+
+      // add case &price
+       const addCaseBtn = document.getElementById("addCase");
+       addCaseBtn.addEventListener("click", function(){
+           const caseQuantity = document.getElementById("caseQ").value;
+         //   plusMinus("caseQ", 1);
+          const caseQuantityNumber = parseFloat(caseQuantity);
+          const totalCase = caseQuantityNumber + 1;
+          document.getElementById("caseQ").value = totalCase;
+          
+          const CasePrice = document.getElementById("CasePrice").innerText;
+          CasePriceAddRemove("CasePrice", 59);
+       })
+
+      // remove case & price
+
+      const removeCase = document.getElementById("removeCase");
+      removeCase.addEventListener("click", function(){
+         const caseQuantity = document.getElementById("caseQ").value;
+         // plusMinus("caseQ", -1);
+          if(caseQuantity > 1){
+            const caseQuantityNumber = parseFloat(caseQuantity);
+            const totalCase = caseQuantityNumber - 1;
+            document.getElementById("caseQ").value = totalCase;
+           
+            const CasePrice = document.getElementById("CasePrice").innerText;
+             CasePriceAddRemove("CasePrice", -59);
+          }
+      })
+
+      // price plus minus function
+      function CasePriceAddRemove(id, DfCasePrice  ){
+         const casePrices = document.getElementById(id).innerText;
+         const priceNumber = parseFloat(casePrices);
+         const totalPrice =  priceNumber + DfCasePrice;
+         document.getElementById(id).innerText = totalPrice;
+      }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   //  intermidiate code
+      // function plusMinus(id, caseQuantity ){
+      //    const caseQuantity1 = document.getElementById(id).value;
+      //     if(caseQuantity1 > 1){
+      //       const caseQuantityNumber = parseFloat(caseQuantity1);
+      //       const totalCase = caseQuantityNumber + caseQuantity;
+      //       document.getElementById(id).value = totalCase;
+      //     }
+      // }
    </script>
 </body>
 
