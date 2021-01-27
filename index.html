@@ -65,8 +65,8 @@
 
                      <div class="col-md-4 status">
                         <h5 >$<span id="subTotal">1278</span></h5>
-                        <h5>$0</h5>
-                        <h5>$1,278</h5>
+                        <h5>$ <span id="tex"> 10</span></h5>
+                        <h5>$ <span id="Total"> 1288</span></h5>
                      </div>
                   </div>
                </div>
@@ -78,11 +78,12 @@
       </div>
    </section>
    <script>
-      // iphone plus
+      ////////Iphone////////
+      // iphoneQ plus
       const addiphoneBtn = document.getElementById("addiphone");
       addiphoneBtn.addEventListener("click", function(){
          const phoneQuantity = document.getElementById("iphoneQ").value;
-         const phoneQNumber = parseFloat(phoneQuantity);
+         const phoneQNumber = parseFloat( phoneQuantity);
          var totalQuantity = phoneQNumber + 1;
          document.getElementById("iphoneQ").value = totalQuantity; 
          // price add
@@ -93,11 +94,24 @@
        
          // subtotal
          const subTotal = document.getElementById("subTotal").innerText;
-         const totalSub = totalPrice + 59 ;
+         const subTotalNumber = parseFloat(subTotal);
+         const totalSub = subTotalNumber + 1219 ;
          document.getElementById("subTotal").innerText = totalSub;
+
+         // add tex
+         const addTex  = document.getElementById("tex").innerText;
+         const addTexNumber = parseFloat(addTex);
+         const  totalTex =  addTexNumber + 7 ;
+         document.getElementById("tex").innerText = totalTex;
+
+         // add Total
+         const allTotal = document.getElementById("Total").innerText;
+         const allTotalNumber = parseFloat(allTotal);
+         const  ShowTotal = totalTex + totalSub;
+         document.getElementById("Total").innerText = ShowTotal;
       })
      
-      // iphone minus
+      // iphoneQ  minus
       const removeiphoneBtn = document.getElementById("removeiphone");
       removeiphoneBtn.addEventListener("click",function(){
          const phoneQuantity = document.getElementById("iphoneQ").value;
@@ -112,8 +126,21 @@
 
          //  subtotal minus
          const subTotal = document.getElementById("subTotal").innerText;
-         const totalSub = totalPrice + 59 ;
+         const subTotalNumber = parseFloat(subTotal);
+         const totalSub = subTotalNumber - 1219 ;
          document.getElementById("subTotal").innerText = totalSub;
+
+          // remove tex
+          const addTex  = document.getElementById("tex").innerText;
+         const addTexNumber = parseFloat(addTex);
+         const  totalTex =  addTexNumber - 7 ;
+         document.getElementById("tex").innerText = totalTex;
+           
+         // remove Total
+           const allTotal = document.getElementById("Total").innerText;
+         const allTotalNumber = parseFloat(allTotal);
+         const  ShowTotal = totalTex + totalSub;
+         document.getElementById("Total").innerText = ShowTotal;
          
           }
 
@@ -129,9 +156,9 @@
       }
 
       // end of iphone bar 
-      // start Case bar 
+      
      
-
+      ///////////Iphone case//////////
       // add case &price
        const addCaseBtn = document.getElementById("addCase");
        addCaseBtn.addEventListener("click", function(){
@@ -149,11 +176,22 @@
          const subTotalNumber = parseFloat(subTotal);
          const totalSub = subTotalNumber+ 59  ;
          document.getElementById("subTotal").innerText = totalSub;
+
+          // add text
+          const addTex  = document.getElementById("tex").innerText;
+         const addTexNumber = parseFloat(addTex);
+         const  totalTex =  addTexNumber + 3 ;
+         document.getElementById("tex").innerText = totalTex;
+
+         // add Total
+         const allTotal = document.getElementById("Total").innerText;
+         const allTotalNumber = parseFloat(allTotal);
+         const  ShowTotal = totalTex + totalSub;
+         document.getElementById("Total").innerText = ShowTotal;
        })
 
       // remove case & price
-
-      const removeCase = document.getElementById("removeCase");
+       const removeCase = document.getElementById("removeCase");
       removeCase.addEventListener("click", function(){
          const caseQuantity = document.getElementById("caseQ").value;
          // plusMinus("caseQ", -1);
@@ -170,7 +208,19 @@
          const subTotalNumber = parseFloat(subTotal);
          const totalSub = subTotalNumber - 59  ;
          document.getElementById("subTotal").innerText = totalSub;
-          }
+
+          // add text
+          const addTex  = document.getElementById("tex").innerText;
+         const addTexNumber = parseFloat(addTex);
+         const  totalTex =  addTexNumber - 3 ;
+         document.getElementById("tex").innerText = totalTex;
+
+         // remove Total
+         const allTotal = document.getElementById("Total").innerText;
+         const allTotalNumber = parseFloat(allTotal);
+         const  ShowTotal = totalTex + totalSub;
+         document.getElementById("Total").innerText = ShowTotal;
+          } 
       })
 
       // price plus minus function
