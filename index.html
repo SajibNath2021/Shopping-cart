@@ -142,7 +142,13 @@
           document.getElementById("caseQ").value = totalCase;
           
           const CasePrice = document.getElementById("CasePrice").innerText;
-          CasePriceAddRemove("CasePrice", 59);
+          const totalPrice = CasePriceAddRemove("CasePrice", 59);
+          
+          //  subtotal plus
+         const subTotal = document.getElementById("subTotal").innerText;
+         const subTotalNumber = parseFloat(subTotal);
+         const totalSub = 59 + subTotalNumber ;
+         document.getElementById("subTotal").innerText = totalSub;
        })
 
       // remove case & price
@@ -158,6 +164,12 @@
            
             const CasePrice = document.getElementById("CasePrice").innerText;
              CasePriceAddRemove("CasePrice", -59);
+
+              //  subtotal plus
+         const subTotal = document.getElementById("subTotal").innerText;
+         const subTotalNumber = parseFloat(subTotal);
+         const totalSub = -59 + subTotalNumber ;
+         document.getElementById("subTotal").innerText = totalSub;
           }
       })
 
