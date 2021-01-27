@@ -87,14 +87,14 @@
          document.getElementById("iphoneQ").value = totalQuantity; 
          // price add
          const iphonePrice = document.getElementById("IphonePrice").innerText;
-         priceAddRemove("IphonePrice", 1219 );
+         const totalPrice = priceAddRemove("IphonePrice", 1219 );
             
        
        
          // subtotal
-         // const subTotal = document.getElementById("subTotal").innerText;
-         // const totalSub =  59 + totalPrice ;
-         // document.getElementById("subTotal").innerText = totalSub;
+         const subTotal = document.getElementById("subTotal").innerText;
+         const totalSub = totalPrice + 59 ;
+         document.getElementById("subTotal").innerText = totalSub;
       })
      
       // iphone minus
@@ -108,7 +108,12 @@
 
          //price minus
           const iphonePrice = document.getElementById("IphonePrice").innerText;
-          priceAddRemove("IphonePrice", -1219 )
+          const totalPrice = priceAddRemove("IphonePrice", -1219 );
+
+         //  subtotal minus
+         const subTotal = document.getElementById("subTotal").innerText;
+         const totalSub = totalPrice + 59 ;
+         document.getElementById("subTotal").innerText = totalSub;
          
           }
 
@@ -120,6 +125,7 @@
          const priceNumber = parseFloat(iphonePrice);
          const totalPrice =  priceNumber + DFIphonePrice ;
          document.getElementById(id).innerText = totalPrice;
+         return totalPrice;
       }
 
       // end of iphone bar 
